@@ -1,0 +1,50 @@
+[
+    {
+        "question": "What was the death toll in B\u00f6rde during the last April?",
+        "graph": "urn:graph:e0bee721-66b3-4815-9253-6f657a89be28",
+        "results": [
+            {
+                "01_language_detection.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "What was the death toll in Dithmarschen during the last March?",
+        "graph": "urn:graph:73126e03-7102-405a-8c9c-47e5246cc708",
+        "results": [
+            {
+                "01_language_detection.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many infections were there in Nordfriesland district in April 2020?",
+        "graph": "urn:graph:352d8b35-6ba3-4866-90fc-a23c7be3c740",
+        "results": [
+            {
+                "01_language_detection.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "What was the death toll in Ostholstein during the last January?",
+        "graph": "urn:graph:cdac0a96-27d7-4784-9f46-b4ba3f709bb4",
+        "results": [
+            {
+                "01_language_detection.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    }
+]

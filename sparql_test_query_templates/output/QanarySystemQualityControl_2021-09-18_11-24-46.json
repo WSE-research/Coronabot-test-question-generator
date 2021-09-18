@@ -1,0 +1,50 @@
+[
+    {
+        "question": "What was the death toll in Osterode during the last June?",
+        "graph": "urn:graph:ae9b069b-1cc7-404d-88b1-eda5ebab1b1b",
+        "results": [
+            {
+                "01_language_detection.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many infections were there in Stendal District in February 2021?",
+        "graph": "urn:graph:c2780b34-4256-46d3-89a3-a569c5559b78",
+        "results": [
+            {
+                "01_language_detection.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "What was the number of incidents of Harz District in 2021?",
+        "graph": "urn:graph:8510ec84-4eab-4726-8dce-55e871f8004f",
+        "results": [
+            {
+                "01_language_detection.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "What was the number of incidents of Delitzsch in 2020?",
+        "graph": "urn:graph:46266794-0b10-4039-b971-315f46fd5f21",
+        "results": [
+            {
+                "01_language_detection.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    }
+]

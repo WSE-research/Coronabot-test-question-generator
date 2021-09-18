@@ -1,0 +1,21 @@
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+ASK
+WHERE {
+    GRAPH ?GRAPH {
+        ?a a qa:AnnotationOfInstance .
+        ?a oa:hasTarget [
+            a oa:SpecificResource ;
+            oa:hasSource ?source ;
+            oa:hasSelector [
+                a oa:TextPositionSelector ;
+                oa:start ?START ; 
+                oa:end ?END
+            ]
+        ] .
+        ?a oa:hasBody ?RESOURCE . 
+        ?a oa:annotatedBy ?component . 
+        ?a oa:annotatedAt ?time .
+        ?a qa:score ?score .
+    }
+}

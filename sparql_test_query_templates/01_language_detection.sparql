@@ -1,9 +1,9 @@
 PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
 PREFIX qa: <http://www.wdaqua.eu/qa#>
-SELECT * 
+ASK
 WHERE {
-    GRAPH ?graph {
+    GRAPH <GRAPHID> {
         ?a a qa:AnnotationOfQuestionLanguage .
-        ?a oa:hasBody ?language .
+        ?a oa:hasBody "LANGUAGE" .
     }
 }

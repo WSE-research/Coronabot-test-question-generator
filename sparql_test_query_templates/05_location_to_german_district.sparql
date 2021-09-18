@@ -1,0 +1,22 @@
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+ASK
+WHERE {
+    GRAPH ?GRAPH {
+        ?a a qa:AnnotationOfInstanceLocation .
+        ?a oa:hasBody [
+            dbo:type ?DBOTYPE;
+            rdfs:label ?LABEL;
+            qa:hasID ?qid
+        ] .
+        ?a qa:hasConfidence ?score .
+        ?a oa:hasTarget [
+            rdfs:label ?target ;
+            qa:targetRelation ?targetRelation
+        ] .
+        ?a oa:annotatedBy ?component  .
+        ?a oa:annotatedAt ?time .
+    }
+}

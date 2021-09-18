@@ -1,0 +1,90 @@
+{
+    "qanary": {
+        "system_url": "http://webengineering.ins.hs-anhalt.de:43740/startquestionansweringwithtextquestion",
+        "componentlist": [
+            "LD-Shuyo"
+        ],
+        "componentlistX": [
+            "LD-Shuyo",
+            "coronabot-dialog-flow",
+            "coronabot-named-entity-recognition-time-en",
+            "coronabot-named-entity-recognition-time-de",
+            "coronabot-named-entity-recognition-location-en",
+            "coronabot-named-entity-recognition-location-de",
+            "OpenTapiocaNED",
+            "LocationToGermanDistrict",
+            "coronabot-missing-information",
+            "coronabot-query-generation",
+            "coronabot-data-acquisition",
+            "coronabot-answer-generation"
+        ],
+        "qanary_triplestore_endpoint": "https://webengineering.ins.hs-anhalt.de:40159",
+        "qanary_triplestore_database": "qanary",
+        "qanary_triplestore_username": "admin",
+        "qanary_triplestore_password": "admin"
+    },
+    "tests": [{
+            "question": "How many infections were there in Delitzsch in May 2020?",
+            "replacements": {
+                "MONTH": "May",
+                "YEAR": 2020,
+                "PLACE": "Delitzsch"
+            },
+            "template": {
+                "intent": "incidents",
+                "last": false,
+                "questions": [
+                    "How many infections were there in [PLACE] in [MONTH] [YEAR]?"
+                ]
+            }
+        },
+        {
+            "question": "What was the number of incidents of Harz District in 2020?",
+            "replacements": {
+                "MONTH": "February",
+                "YEAR": 2020,
+                "PLACE": "Harz District"
+            },
+            "template": {
+                "intent": "incidents",
+                "last": false,
+                "questions": [
+                    "What was the number of incidents of [PLACE] in [YEAR]?"
+                ]
+            }
+        },
+        {
+            "question": "How many infections were there in Aue-Schwarzenberg in June 2021?",
+            "replacements": {
+                "MONTH": "June",
+                "YEAR": 2021,
+                "PLACE": "Aue-Schwarzenberg"
+            },
+            "template": {
+                "intent": "incidents",
+                "last": false,
+                "questions": [
+                    "How many infections were there in [PLACE] in [MONTH] [YEAR]?"
+                ]
+            }
+        },
+        {
+            "question": "What was the number of incidents of Mittweida in 2020?",
+            "replacements": {
+                "MONTH": "April",
+                "YEAR": 2020,
+                "PLACE": "Mittweida"
+            },
+            "template": {
+                "intent": "incidents",
+                "last": false,
+                "questions": [
+                    "What was the number of incidents of [PLACE] in [YEAR]?"
+                ]
+            }
+        }
+    ],
+    "validation-sparql-templates": [
+        "01_language_detection.sparql"
+    ]
+}
