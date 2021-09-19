@@ -1,0 +1,970 @@
+2021-09-19 05:12:54,443 - qanary-evaluator - INFO - 
+        current configuration:
+            qanary: 
+                {                   'componentlist': [                   'LD-Shuyo',
+                                                         'coronabot-dialog-flow',
+                                                         'coronabot-question-classification',
+                                                         'coronabot-named-entity-recognition-time-en',
+                                                         'coronabot-named-entity-recognition-time-de',
+                                                         'coronabot-named-entity-recognition-location-en',
+                                                         'coronabot-named-entity-recognition-location-de',
+                                                         'OpenTapiocaNED',
+                                                         'LocationToGermanDistrict',
+                                                         'coronabot-missing-information',
+                                                         'coronabot-query-generation',
+                                                         'coronabot-data-acquisition',
+                                                         'coronabot-answer-generation'],
+                    'qanary_triplestore_database': 'qanary',
+                    'qanary_triplestore_endpoint': 'https://webengineering.ins.hs-anhalt.de:40159',
+                    'qanary_triplestore_password': 'admin',
+                    'qanary_triplestore_username': 'admin',
+                    'system_url': 'https://webengineering.ins.hs-anhalt.de:43740/startquestionansweringwithtextquestion'}
+
+            7 validation SPARQL templates:
+                [                   '01_language_detection.sparql',
+                    '02_question_classification.sparql',
+                    '03_time_recognition.sparql',
+                    '04_ned.sparql',
+                    '05_location_to_german_district.sparql',
+                    '06_coronabot_missing_information.sparql',
+                    '07_rki_query.sparql']
+
+            custom module containing validation method:
+                None
+
+            4 test questions:
+                [                   {                   'question': 'Infections in '
+                                                    'Nordfriesland district '
+                                                    'and Kiel?',
+                                        'replacements': {                   'CONTAINS_TIME': False,
+                                                                            'LANGUAGE': 'en',
+                                                                            'MONTH': 'June',
+                                                                            'PLACE_LABEL': 'Nordfriesland '
+                                                                                           'district',
+                                                                            'PLACE_URL': 'http://www.wikidata.org/entity/Q2937',
+                                                                            'QUESTION_CLASS': 'infection_location',
+                                                                            'YEAR': 2021},
+                                        'template': {                   'last': False,
+                                                                        'parameters': {                   'CONTAINS_TIME': False,
+                                                                                                          'QUESTION_CLASS': 'infection_location'},
+                                                                        'questions': [                   'Infections '
+                                                                                                         'in '
+                                                                                                         '[PLACE_LABEL] '
+                                                                                                         'and '
+                                                                                                         'Kiel?']}},
+                    {                   'question': 'How many cases were '
+                                                    'reported in August in '
+                                                    'Magdeburg?',
+                                        'replacements': {                   'CONTAINS_TIME': True,
+                                                                            'LANGUAGE': 'en',
+                                                                            'MONTH': 'February',
+                                                                            'PLACE_LABEL': 'Mittweida',
+                                                                            'PLACE_URL': 'http://www.wikidata.org/entity/Q20253',
+                                                                            'QUESTION_CLASS': 'infection_location_time',
+                                                                            'YEAR': 2020},
+                                        'template': {                   'last': True,
+                                                                        'parameters': {                   'CONTAINS_TIME': True,
+                                                                                                          'QUESTION_CLASS': 'infection_location_time'},
+                                                                        'questions': [                   'How '
+                                                                                                         'many '
+                                                                                                         'cases '
+                                                                                                         'were '
+                                                                                                         'reported '
+                                                                                                         'in '
+                                                                                                         'August '
+                                                                                                         'in '
+                                                                                                         'Magdeburg?']}},
+                    {                   'question': 'How many cases were '
+                                                    'reported in August in '
+                                                    'Magdeburg?',
+                                        'replacements': {                   'CONTAINS_TIME': True,
+                                                                            'LANGUAGE': 'en',
+                                                                            'MONTH': 'March',
+                                                                            'PLACE_LABEL': 'Altmarkkreis '
+                                                                                           'Salzwedel',
+                                                                            'PLACE_URL': 'http://www.wikidata.org/entity/Q6061',
+                                                                            'QUESTION_CLASS': 'infection_location_time',
+                                                                            'YEAR': 2020},
+                                        'template': {                   'last': True,
+                                                                        'parameters': {                   'CONTAINS_TIME': True,
+                                                                                                          'QUESTION_CLASS': 'infection_location_time'},
+                                                                        'questions': [                   'How '
+                                                                                                         'many '
+                                                                                                         'cases '
+                                                                                                         'were '
+                                                                                                         'reported '
+                                                                                                         'in '
+                                                                                                         'August '
+                                                                                                         'in '
+                                                                                                         'Magdeburg?']}},
+                    {                   'question': 'How many cases were '
+                                                    'reported on the first of '
+                                                    'May 2020?',
+                                        'replacements': {                   'CONTAINS_TIME': True,
+                                                                            'LANGUAGE': 'en',
+                                                                            'MONTH': 'May',
+                                                                            'PLACE_LABEL': 'Niederschlesischer '
+                                                                                           'Oberlausitzkreis',
+                                                                            'PLACE_URL': 'http://www.wikidata.org/entity/Q20259',
+                                                                            'QUESTION_CLASS': 'infection_time',
+                                                                            'YEAR': 2020},
+                                        'template': {                   'last': False,
+                                                                        'parameters': {                   'CONTAINS_TIME': True,
+                                                                                                          'QUESTION_CLASS': 'infection_time'},
+                                                                        'questions': [                   'How '
+                                                                                                         'many '
+                                                                                                         'cases '
+                                                                                                         'were '
+                                                                                                         'reported '
+                                                                                                         'on '
+                                                                                                         'the '
+                                                                                                         'first '
+                                                                                                         'of '
+                                                                                                         '[MONTH] '
+                                                                                                         '[YEAR]?']}}]
+
+    
+2021-09-19 05:12:54,443 - qanary-evaluator - INFO - Method 'validate' found in module 'dummy'.
+2021-09-19 05:12:54,443 - qanary-evaluator - INFO - 0. TEST: {'question': 'Infections in Nordfriesland district and Kiel?',
+ 'replacements': {'CONTAINS_TIME': False,
+                  'LANGUAGE': 'en',
+                  'MONTH': 'June',
+                  'PLACE_LABEL': 'Nordfriesland district',
+                  'PLACE_URL': 'http://www.wikidata.org/entity/Q2937',
+                  'QUESTION_CLASS': 'infection_location',
+                  'YEAR': 2021},
+ 'template': {'last': False,
+              'parameters': {'CONTAINS_TIME': False,
+                             'QUESTION_CLASS': 'infection_location'},
+              'questions': ['Infections in [PLACE_LABEL] and Kiel?']}}
+2021-09-19 05:12:54,443 - qanary-evaluator - INFO - request parameter for Qanary system:
+{'componentlist[]': ['LD-Shuyo',
+                     'coronabot-dialog-flow',
+                     'coronabot-question-classification',
+                     'coronabot-named-entity-recognition-time-en',
+                     'coronabot-named-entity-recognition-time-de',
+                     'coronabot-named-entity-recognition-location-en',
+                     'coronabot-named-entity-recognition-location-de',
+                     'OpenTapiocaNED',
+                     'LocationToGermanDistrict',
+                     'coronabot-missing-information',
+                     'coronabot-query-generation',
+                     'coronabot-data-acquisition',
+                     'coronabot-answer-generation'],
+ 'question': 'Infections in Nordfriesland district and Kiel?'}
+2021-09-19 05:13:17,292 - qanary-evaluator - INFO - request as curl:
+curl -X POST -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Content-Length: 714' -H 'Content-Type: application/x-www-form-urlencoded' -H 'User-Agent: python-requests/2.25.0' -d 'question=Infections+in+Nordfriesland+district+and+Kiel%3F&componentlist%5B%5D=LD-Shuyo&componentlist%5B%5D=coronabot-dialog-flow&componentlist%5B%5D=coronabot-question-classification&componentlist%5B%5D=coronabot-named-entity-recognition-time-en&componentlist%5B%5D=coronabot-named-entity-recognition-time-de&componentlist%5B%5D=coronabot-named-entity-recognition-location-en&componentlist%5B%5D=coronabot-named-entity-recognition-location-de&componentlist%5B%5D=OpenTapiocaNED&componentlist%5B%5D=LocationToGermanDistrict&componentlist%5B%5D=coronabot-missing-information&componentlist%5B%5D=coronabot-query-generation&componentlist%5B%5D=coronabot-data-acquisition&componentlist%5B%5D=coronabot-answer-generation' https://webengineering.ins.hs-anhalt.de:43740/startquestionansweringwithtextquestion
+2021-09-19 05:13:17,292 - qanary-evaluator - INFO - response of Qanary system:
+{'endpoint': 'http://admin:admin@webengineering.ins.hs-anhalt.de:40158/qanary',
+ 'inGraph': 'urn:graph:52811e16-7325-494e-a9b6-46958f786274',
+ 'outGraph': 'urn:graph:52811e16-7325-494e-a9b6-46958f786274',
+ 'question': 'https://webengineering.ins.hs-anhalt.de:43740/question/stored-question__text_f224e466-6a53-4255-9e8f-b3e61fc26749'}
+2021-09-19 05:13:17,293 - qanary-evaluator - INFO - {'question': 'Infections in Nordfriesland district and Kiel?', 'replacements': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False, 'MONTH': 'June', 'YEAR': 2021, 'PLACE_LABEL': 'Nordfriesland district', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q2937'}, 'template': {'last': False, 'questions': ['Infections in [PLACE_LABEL] and Kiel?'], 'parameters': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False}}}
+2021-09-19 05:13:17,562 - qanary-evaluator - INFO - {'question': 'Infections in Nordfriesland district and Kiel?', 'replacements': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False, 'MONTH': 'June', 'YEAR': 2021, 'PLACE_LABEL': 'Nordfriesland district', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q2937'}, 'template': {'last': False, 'questions': ['Infections in [PLACE_LABEL] and Kiel?'], 'parameters': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False}}}
+01_language_detection.sparql
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+ASK
+WHERE {
+    GRAPH <urn:graph:52811e16-7325-494e-a9b6-46958f786274> {
+        ?a a qa:AnnotationOfQuestionLanguage .
+        ?a oa:hasBody "en" .
+    }
+}
+
+True
+2021-09-19 05:13:17,562 - qanary-evaluator - INFO - question: Infections in Nordfriesland district and Kiel?, result: True, sparql: 01_language_detection.sparql
+2021-09-19 05:13:17,563 - qanary-evaluator - INFO -  ... 01_language_detection.sparql: True (269 ms)
+2021-09-19 05:13:17,563 - qanary-evaluator - INFO - {'question': 'Infections in Nordfriesland district and Kiel?', 'replacements': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False, 'MONTH': 'June', 'YEAR': 2021, 'PLACE_LABEL': 'Nordfriesland district', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q2937'}, 'template': {'last': False, 'questions': ['Infections in [PLACE_LABEL] and Kiel?'], 'parameters': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False}}}
+2021-09-19 05:13:17,615 - qanary-evaluator - INFO - {'question': 'Infections in Nordfriesland district and Kiel?', 'replacements': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False, 'MONTH': 'June', 'YEAR': 2021, 'PLACE_LABEL': 'Nordfriesland district', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q2937'}, 'template': {'last': False, 'questions': ['Infections in [PLACE_LABEL] and Kiel?'], 'parameters': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False}}}
+02_question_classification.sparql
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+ASK
+WHERE {
+    GRAPH <urn:graph:52811e16-7325-494e-a9b6-46958f786274> {
+        ?a a qa:AnnotationOfQuestionClassification .
+        ?a oa:hasBody ?body .
+        FILTER("infection_location" = ?body)
+        ?a oa:annotatedBy ?component .
+        ?a oa:annotatedAt ?time .
+        ?a qa:score ?score .
+    }
+}
+
+True
+2021-09-19 05:13:17,615 - qanary-evaluator - INFO - question: Infections in Nordfriesland district and Kiel?, result: True, sparql: 02_question_classification.sparql
+2021-09-19 05:13:17,615 - qanary-evaluator - INFO -  ... 02_question_classification.sparql: True (52 ms)
+2021-09-19 05:13:17,615 - qanary-evaluator - INFO - {'question': 'Infections in Nordfriesland district and Kiel?', 'replacements': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False, 'MONTH': 'June', 'YEAR': 2021, 'PLACE_LABEL': 'Nordfriesland district', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q2937'}, 'template': {'last': False, 'questions': ['Infections in [PLACE_LABEL] and Kiel?'], 'parameters': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False}}}
+2021-09-19 05:13:17,670 - qanary-evaluator - INFO - {'question': 'Infections in Nordfriesland district and Kiel?', 'replacements': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False, 'MONTH': 'June', 'YEAR': 2021, 'PLACE_LABEL': 'Nordfriesland district', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q2937'}, 'template': {'last': False, 'questions': ['Infections in [PLACE_LABEL] and Kiel?'], 'parameters': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False}}}
+03_time_recognition.sparql
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+# checks if an annotation of time is available 
+ASK 
+WHERE {
+    GRAPH <urn:graph:52811e16-7325-494e-a9b6-46958f786274> {
+        {
+            ?a a qa:AnnotationOfInstanceTime .
+            ?a oa:hasBody [
+                a oa:TimeSpan ;
+                oa:start ?start ;
+                oa:end ?end
+            ] .
+            ?a oa:annotatedBy ?component .
+            ?a oa:annotatedAt ?time .
+        } 
+        UNION
+        { # don't care about this query if no time is contained in the current question
+            ?s ?p ?o . 
+            FILTER("False" = "False")
+        }
+    }
+}
+
+True
+2021-09-19 05:13:17,671 - qanary-evaluator - INFO - question: Infections in Nordfriesland district and Kiel?, result: True, sparql: 03_time_recognition.sparql
+2021-09-19 05:13:17,671 - qanary-evaluator - INFO -  ... 03_time_recognition.sparql: True (55 ms)
+2021-09-19 05:13:17,671 - qanary-evaluator - INFO - {'question': 'Infections in Nordfriesland district and Kiel?', 'replacements': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False, 'MONTH': 'June', 'YEAR': 2021, 'PLACE_LABEL': 'Nordfriesland district', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q2937'}, 'template': {'last': False, 'questions': ['Infections in [PLACE_LABEL] and Kiel?'], 'parameters': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False}}}
+2021-09-19 05:13:17,725 - qanary-evaluator - INFO - {'question': 'Infections in Nordfriesland district and Kiel?', 'replacements': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False, 'MONTH': 'June', 'YEAR': 2021, 'PLACE_LABEL': 'Nordfriesland district', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q2937'}, 'template': {'last': False, 'questions': ['Infections in [PLACE_LABEL] and Kiel?'], 'parameters': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False}}}
+04_ned.sparql
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+ASK
+WHERE {
+    GRAPH <urn:graph:52811e16-7325-494e-a9b6-46958f786274> {
+        ?a a qa:AnnotationOfInstance .
+        ?a oa:hasTarget [
+            a oa:SpecificResource ;
+            oa:hasSource ?source ;
+            oa:hasSelector [
+                a oa:TextPositionSelector ;
+                oa:start ?start ; 
+                oa:end ?end 
+            ]
+        ] .
+        ?a oa:hasBody <http://www.wikidata.org/entity/Q2937> . 
+        ?a oa:annotatedBy ?component . 
+        ?a oa:annotatedAt ?time .
+        ?a qa:score ?score .
+    }
+}
+True
+2021-09-19 05:13:17,725 - qanary-evaluator - INFO - question: Infections in Nordfriesland district and Kiel?, result: True, sparql: 04_ned.sparql
+2021-09-19 05:13:17,725 - qanary-evaluator - INFO -  ... 04_ned.sparql: True (54 ms)
+2021-09-19 05:13:17,725 - qanary-evaluator - INFO - {'question': 'Infections in Nordfriesland district and Kiel?', 'replacements': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False, 'MONTH': 'June', 'YEAR': 2021, 'PLACE_LABEL': 'Nordfriesland district', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q2937'}, 'template': {'last': False, 'questions': ['Infections in [PLACE_LABEL] and Kiel?'], 'parameters': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False}}}
+2021-09-19 05:13:17,899 - qanary-evaluator - INFO - {'question': 'Infections in Nordfriesland district and Kiel?', 'replacements': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False, 'MONTH': 'June', 'YEAR': 2021, 'PLACE_LABEL': 'Nordfriesland district', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q2937'}, 'template': {'last': False, 'questions': ['Infections in [PLACE_LABEL] and Kiel?'], 'parameters': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False}}}
+05_location_to_german_district.sparql
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+ASK
+WHERE {
+    GRAPH <urn:graph:52811e16-7325-494e-a9b6-46958f786274> {
+        ?a a qa:AnnotationOfInstanceLocation .
+        ?a oa:hasBody [
+            dbo:type <https://dbpedia.org/resource/Districts_of_Germany> ;
+            rdfs:label ?label ;
+            qa:hasID ?qid
+        ] .
+        FILTER("Nordfriesland district" = ?label)
+        ?a qa:hasConfidence ?score .
+        ?a oa:hasTarget [
+            rdfs:label ?target ;
+            qa:targetRelation ?targetRelation
+        ] .
+        ?a oa:annotatedBy ?component  .
+        ?a oa:annotatedAt ?time .
+    }
+}
+True
+2021-09-19 05:13:17,899 - qanary-evaluator - INFO - question: Infections in Nordfriesland district and Kiel?, result: True, sparql: 05_location_to_german_district.sparql
+2021-09-19 05:13:17,899 - qanary-evaluator - INFO -  ... 05_location_to_german_district.sparql: True (174 ms)
+2021-09-19 05:13:17,899 - qanary-evaluator - INFO - {'question': 'Infections in Nordfriesland district and Kiel?', 'replacements': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False, 'MONTH': 'June', 'YEAR': 2021, 'PLACE_LABEL': 'Nordfriesland district', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q2937'}, 'template': {'last': False, 'questions': ['Infections in [PLACE_LABEL] and Kiel?'], 'parameters': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False}}}
+2021-09-19 05:13:17,950 - qanary-evaluator - INFO - {'question': 'Infections in Nordfriesland district and Kiel?', 'replacements': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False, 'MONTH': 'June', 'YEAR': 2021, 'PLACE_LABEL': 'Nordfriesland district', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q2937'}, 'template': {'last': False, 'questions': ['Infections in [PLACE_LABEL] and Kiel?'], 'parameters': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False}}}
+06_coronabot_missing_information.sparql
+# should have no results for complete answer
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+# checks if NO missing information were annotated for the current question
+ASK
+WHERE {
+    GRAPH <urn:graph:52811e16-7325-494e-a9b6-46958f786274> {
+        FILTER NOT EXISTS { 
+            ?s a qa:AnnotationOfMissingInformation .
+            ?s oa:hasBody ?MISSING .
+            ?s oa:annotatedBy ?component .
+            ?s oa:annotatedAt ?time .
+        }
+    }
+}
+True
+2021-09-19 05:13:17,951 - qanary-evaluator - INFO - question: Infections in Nordfriesland district and Kiel?, result: True, sparql: 06_coronabot_missing_information.sparql
+2021-09-19 05:13:17,951 - qanary-evaluator - INFO -  ... 06_coronabot_missing_information.sparql: True (51 ms)
+2021-09-19 05:13:17,951 - qanary-evaluator - INFO - {'question': 'Infections in Nordfriesland district and Kiel?', 'replacements': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False, 'MONTH': 'June', 'YEAR': 2021, 'PLACE_LABEL': 'Nordfriesland district', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q2937'}, 'template': {'last': False, 'questions': ['Infections in [PLACE_LABEL] and Kiel?'], 'parameters': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False}}}
+2021-09-19 05:13:18,004 - qanary-evaluator - INFO - {'question': 'Infections in Nordfriesland district and Kiel?', 'replacements': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False, 'MONTH': 'June', 'YEAR': 2021, 'PLACE_LABEL': 'Nordfriesland district', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q2937'}, 'template': {'last': False, 'questions': ['Infections in [PLACE_LABEL] and Kiel?'], 'parameters': {'QUESTION_CLASS': 'infection_location', 'CONTAINS_TIME': False}}}
+07_rki_query.sparql
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+ASK
+WHERE {
+    GRAPH <urn:graph:52811e16-7325-494e-a9b6-46958f786274> {
+        ?s a qa:AnnotationOfQuery .
+        ?s oa:hasBody ?query .
+        ?s oa:hasTarget ?location_key .
+        ?s oa:annotatedBy ?component .
+        ?s oa:annotatedAt ?time .
+    }
+}
+
+True
+2021-09-19 05:13:18,004 - qanary-evaluator - INFO - question: Infections in Nordfriesland district and Kiel?, result: True, sparql: 07_rki_query.sparql
+2021-09-19 05:13:18,004 - qanary-evaluator - INFO -  ... 07_rki_query.sparql: True (53 ms)
+2021-09-19 05:13:18,004 - qanary-evaluator - INFO - custom function: True (0 ms)
+2021-09-19 05:13:18,005 - qanary-evaluator - INFO - 1. TEST: {'question': 'How many cases were reported in August in Magdeburg?',
+ 'replacements': {'CONTAINS_TIME': True,
+                  'LANGUAGE': 'en',
+                  'MONTH': 'February',
+                  'PLACE_LABEL': 'Mittweida',
+                  'PLACE_URL': 'http://www.wikidata.org/entity/Q20253',
+                  'QUESTION_CLASS': 'infection_location_time',
+                  'YEAR': 2020},
+ 'template': {'last': True,
+              'parameters': {'CONTAINS_TIME': True,
+                             'QUESTION_CLASS': 'infection_location_time'},
+              'questions': ['How many cases were reported in August in '
+                            'Magdeburg?']}}
+2021-09-19 05:13:18,005 - qanary-evaluator - INFO - request parameter for Qanary system:
+{'componentlist[]': ['LD-Shuyo',
+                     'coronabot-dialog-flow',
+                     'coronabot-question-classification',
+                     'coronabot-named-entity-recognition-time-en',
+                     'coronabot-named-entity-recognition-time-de',
+                     'coronabot-named-entity-recognition-location-en',
+                     'coronabot-named-entity-recognition-location-de',
+                     'OpenTapiocaNED',
+                     'LocationToGermanDistrict',
+                     'coronabot-missing-information',
+                     'coronabot-query-generation',
+                     'coronabot-data-acquisition',
+                     'coronabot-answer-generation'],
+ 'question': 'How many cases were reported in August in Magdeburg?'}
+2021-09-19 05:13:44,425 - qanary-evaluator - INFO - request as curl:
+curl -X POST -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Content-Length: 720' -H 'Content-Type: application/x-www-form-urlencoded' -H 'User-Agent: python-requests/2.25.0' -d 'question=How+many+cases+were+reported+in+August+in+Magdeburg%3F&componentlist%5B%5D=LD-Shuyo&componentlist%5B%5D=coronabot-dialog-flow&componentlist%5B%5D=coronabot-question-classification&componentlist%5B%5D=coronabot-named-entity-recognition-time-en&componentlist%5B%5D=coronabot-named-entity-recognition-time-de&componentlist%5B%5D=coronabot-named-entity-recognition-location-en&componentlist%5B%5D=coronabot-named-entity-recognition-location-de&componentlist%5B%5D=OpenTapiocaNED&componentlist%5B%5D=LocationToGermanDistrict&componentlist%5B%5D=coronabot-missing-information&componentlist%5B%5D=coronabot-query-generation&componentlist%5B%5D=coronabot-data-acquisition&componentlist%5B%5D=coronabot-answer-generation' https://webengineering.ins.hs-anhalt.de:43740/startquestionansweringwithtextquestion
+2021-09-19 05:13:44,426 - qanary-evaluator - INFO - response of Qanary system:
+{'endpoint': 'http://admin:admin@webengineering.ins.hs-anhalt.de:40158/qanary',
+ 'inGraph': 'urn:graph:2560a59a-c7fc-424a-a57e-1fc00868675f',
+ 'outGraph': 'urn:graph:2560a59a-c7fc-424a-a57e-1fc00868675f',
+ 'question': 'https://webengineering.ins.hs-anhalt.de:43740/question/stored-question__text_29536c4c-4901-4f13-81f3-f717283c0d33'}
+2021-09-19 05:13:44,427 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'February', 'YEAR': 2020, 'PLACE_LABEL': 'Mittweida', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20253'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+2021-09-19 05:13:44,658 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'February', 'YEAR': 2020, 'PLACE_LABEL': 'Mittweida', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20253'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+01_language_detection.sparql
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+ASK
+WHERE {
+    GRAPH <urn:graph:2560a59a-c7fc-424a-a57e-1fc00868675f> {
+        ?a a qa:AnnotationOfQuestionLanguage .
+        ?a oa:hasBody "en" .
+    }
+}
+
+True
+2021-09-19 05:13:44,658 - qanary-evaluator - INFO - question: How many cases were reported in August in Magdeburg?, result: True, sparql: 01_language_detection.sparql
+2021-09-19 05:13:44,658 - qanary-evaluator - INFO -  ... 01_language_detection.sparql: True (231 ms)
+2021-09-19 05:13:44,658 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'February', 'YEAR': 2020, 'PLACE_LABEL': 'Mittweida', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20253'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+2021-09-19 05:13:44,710 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'February', 'YEAR': 2020, 'PLACE_LABEL': 'Mittweida', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20253'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+02_question_classification.sparql
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+ASK
+WHERE {
+    GRAPH <urn:graph:2560a59a-c7fc-424a-a57e-1fc00868675f> {
+        ?a a qa:AnnotationOfQuestionClassification .
+        ?a oa:hasBody ?body .
+        FILTER("infection_location_time" = ?body)
+        ?a oa:annotatedBy ?component .
+        ?a oa:annotatedAt ?time .
+        ?a qa:score ?score .
+    }
+}
+
+True
+2021-09-19 05:13:44,710 - qanary-evaluator - INFO - question: How many cases were reported in August in Magdeburg?, result: True, sparql: 02_question_classification.sparql
+2021-09-19 05:13:44,710 - qanary-evaluator - INFO -  ... 02_question_classification.sparql: True (52 ms)
+2021-09-19 05:13:44,710 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'February', 'YEAR': 2020, 'PLACE_LABEL': 'Mittweida', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20253'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+2021-09-19 05:13:44,764 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'February', 'YEAR': 2020, 'PLACE_LABEL': 'Mittweida', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20253'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+03_time_recognition.sparql
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+# checks if an annotation of time is available 
+ASK 
+WHERE {
+    GRAPH <urn:graph:2560a59a-c7fc-424a-a57e-1fc00868675f> {
+        {
+            ?a a qa:AnnotationOfInstanceTime .
+            ?a oa:hasBody [
+                a oa:TimeSpan ;
+                oa:start ?start ;
+                oa:end ?end
+            ] .
+            ?a oa:annotatedBy ?component .
+            ?a oa:annotatedAt ?time .
+        } 
+        UNION
+        { # don't care about this query if no time is contained in the current question
+            ?s ?p ?o . 
+            FILTER("False" = "True")
+        }
+    }
+}
+
+True
+2021-09-19 05:13:44,764 - qanary-evaluator - INFO - question: How many cases were reported in August in Magdeburg?, result: True, sparql: 03_time_recognition.sparql
+2021-09-19 05:13:44,765 - qanary-evaluator - INFO -  ... 03_time_recognition.sparql: True (54 ms)
+2021-09-19 05:13:44,765 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'February', 'YEAR': 2020, 'PLACE_LABEL': 'Mittweida', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20253'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+2021-09-19 05:13:44,816 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'February', 'YEAR': 2020, 'PLACE_LABEL': 'Mittweida', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20253'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+04_ned.sparql
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+ASK
+WHERE {
+    GRAPH <urn:graph:2560a59a-c7fc-424a-a57e-1fc00868675f> {
+        ?a a qa:AnnotationOfInstance .
+        ?a oa:hasTarget [
+            a oa:SpecificResource ;
+            oa:hasSource ?source ;
+            oa:hasSelector [
+                a oa:TextPositionSelector ;
+                oa:start ?start ; 
+                oa:end ?end 
+            ]
+        ] .
+        ?a oa:hasBody <http://www.wikidata.org/entity/Q20253> . 
+        ?a oa:annotatedBy ?component . 
+        ?a oa:annotatedAt ?time .
+        ?a qa:score ?score .
+    }
+}
+False
+2021-09-19 05:13:44,817 - qanary-evaluator - INFO - question: How many cases were reported in August in Magdeburg?, result: False, sparql: 04_ned.sparql
+2021-09-19 05:13:44,817 - qanary-evaluator - INFO -  ... 04_ned.sparql: False (52 ms)
+2021-09-19 05:13:44,817 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'February', 'YEAR': 2020, 'PLACE_LABEL': 'Mittweida', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20253'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+2021-09-19 05:13:44,991 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'February', 'YEAR': 2020, 'PLACE_LABEL': 'Mittweida', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20253'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+05_location_to_german_district.sparql
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+ASK
+WHERE {
+    GRAPH <urn:graph:2560a59a-c7fc-424a-a57e-1fc00868675f> {
+        ?a a qa:AnnotationOfInstanceLocation .
+        ?a oa:hasBody [
+            dbo:type <https://dbpedia.org/resource/Districts_of_Germany> ;
+            rdfs:label ?label ;
+            qa:hasID ?qid
+        ] .
+        FILTER("Mittweida" = ?label)
+        ?a qa:hasConfidence ?score .
+        ?a oa:hasTarget [
+            rdfs:label ?target ;
+            qa:targetRelation ?targetRelation
+        ] .
+        ?a oa:annotatedBy ?component  .
+        ?a oa:annotatedAt ?time .
+    }
+}
+False
+2021-09-19 05:13:44,992 - qanary-evaluator - INFO - question: How many cases were reported in August in Magdeburg?, result: False, sparql: 05_location_to_german_district.sparql
+2021-09-19 05:13:44,992 - qanary-evaluator - INFO -  ... 05_location_to_german_district.sparql: False (175 ms)
+2021-09-19 05:13:44,992 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'February', 'YEAR': 2020, 'PLACE_LABEL': 'Mittweida', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20253'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+2021-09-19 05:13:45,046 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'February', 'YEAR': 2020, 'PLACE_LABEL': 'Mittweida', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20253'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+06_coronabot_missing_information.sparql
+# should have no results for complete answer
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+# checks if NO missing information were annotated for the current question
+ASK
+WHERE {
+    GRAPH <urn:graph:2560a59a-c7fc-424a-a57e-1fc00868675f> {
+        FILTER NOT EXISTS { 
+            ?s a qa:AnnotationOfMissingInformation .
+            ?s oa:hasBody ?MISSING .
+            ?s oa:annotatedBy ?component .
+            ?s oa:annotatedAt ?time .
+        }
+    }
+}
+True
+2021-09-19 05:13:45,046 - qanary-evaluator - INFO - question: How many cases were reported in August in Magdeburg?, result: True, sparql: 06_coronabot_missing_information.sparql
+2021-09-19 05:13:45,046 - qanary-evaluator - INFO -  ... 06_coronabot_missing_information.sparql: True (54 ms)
+2021-09-19 05:13:45,046 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'February', 'YEAR': 2020, 'PLACE_LABEL': 'Mittweida', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20253'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+2021-09-19 05:13:45,096 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'February', 'YEAR': 2020, 'PLACE_LABEL': 'Mittweida', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20253'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+07_rki_query.sparql
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+ASK
+WHERE {
+    GRAPH <urn:graph:2560a59a-c7fc-424a-a57e-1fc00868675f> {
+        ?s a qa:AnnotationOfQuery .
+        ?s oa:hasBody ?query .
+        ?s oa:hasTarget ?location_key .
+        ?s oa:annotatedBy ?component .
+        ?s oa:annotatedAt ?time .
+    }
+}
+
+True
+2021-09-19 05:13:45,097 - qanary-evaluator - INFO - question: How many cases were reported in August in Magdeburg?, result: True, sparql: 07_rki_query.sparql
+2021-09-19 05:13:45,097 - qanary-evaluator - INFO -  ... 07_rki_query.sparql: True (50 ms)
+2021-09-19 05:13:45,098 - qanary-evaluator - INFO - custom function: True (0 ms)
+2021-09-19 05:13:45,098 - qanary-evaluator - INFO - 2. TEST: {'question': 'How many cases were reported in August in Magdeburg?',
+ 'replacements': {'CONTAINS_TIME': True,
+                  'LANGUAGE': 'en',
+                  'MONTH': 'March',
+                  'PLACE_LABEL': 'Altmarkkreis Salzwedel',
+                  'PLACE_URL': 'http://www.wikidata.org/entity/Q6061',
+                  'QUESTION_CLASS': 'infection_location_time',
+                  'YEAR': 2020},
+ 'template': {'last': True,
+              'parameters': {'CONTAINS_TIME': True,
+                             'QUESTION_CLASS': 'infection_location_time'},
+              'questions': ['How many cases were reported in August in '
+                            'Magdeburg?']}}
+2021-09-19 05:13:45,099 - qanary-evaluator - INFO - request parameter for Qanary system:
+{'componentlist[]': ['LD-Shuyo',
+                     'coronabot-dialog-flow',
+                     'coronabot-question-classification',
+                     'coronabot-named-entity-recognition-time-en',
+                     'coronabot-named-entity-recognition-time-de',
+                     'coronabot-named-entity-recognition-location-en',
+                     'coronabot-named-entity-recognition-location-de',
+                     'OpenTapiocaNED',
+                     'LocationToGermanDistrict',
+                     'coronabot-missing-information',
+                     'coronabot-query-generation',
+                     'coronabot-data-acquisition',
+                     'coronabot-answer-generation'],
+ 'question': 'How many cases were reported in August in Magdeburg?'}
+2021-09-19 05:15:54,578 - qanary-evaluator - INFO - request as curl:
+curl -X POST -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Content-Length: 720' -H 'Content-Type: application/x-www-form-urlencoded' -H 'User-Agent: python-requests/2.25.0' -d 'question=How+many+cases+were+reported+in+August+in+Magdeburg%3F&componentlist%5B%5D=LD-Shuyo&componentlist%5B%5D=coronabot-dialog-flow&componentlist%5B%5D=coronabot-question-classification&componentlist%5B%5D=coronabot-named-entity-recognition-time-en&componentlist%5B%5D=coronabot-named-entity-recognition-time-de&componentlist%5B%5D=coronabot-named-entity-recognition-location-en&componentlist%5B%5D=coronabot-named-entity-recognition-location-de&componentlist%5B%5D=OpenTapiocaNED&componentlist%5B%5D=LocationToGermanDistrict&componentlist%5B%5D=coronabot-missing-information&componentlist%5B%5D=coronabot-query-generation&componentlist%5B%5D=coronabot-data-acquisition&componentlist%5B%5D=coronabot-answer-generation' https://webengineering.ins.hs-anhalt.de:43740/startquestionansweringwithtextquestion
+2021-09-19 05:15:54,578 - qanary-evaluator - INFO - response of Qanary system:
+{'endpoint': 'http://admin:admin@webengineering.ins.hs-anhalt.de:40158/qanary',
+ 'inGraph': 'urn:graph:fd7d1991-9c8c-432e-8e76-6f391e0971bb',
+ 'outGraph': 'urn:graph:fd7d1991-9c8c-432e-8e76-6f391e0971bb',
+ 'question': 'https://webengineering.ins.hs-anhalt.de:43740/question/stored-question__text_1e8e54fb-2ec6-415b-aad4-e0ac9af7a49e'}
+2021-09-19 05:15:54,580 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'March', 'YEAR': 2020, 'PLACE_LABEL': 'Altmarkkreis Salzwedel', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q6061'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+2021-09-19 05:15:54,821 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'March', 'YEAR': 2020, 'PLACE_LABEL': 'Altmarkkreis Salzwedel', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q6061'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+01_language_detection.sparql
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+ASK
+WHERE {
+    GRAPH <urn:graph:fd7d1991-9c8c-432e-8e76-6f391e0971bb> {
+        ?a a qa:AnnotationOfQuestionLanguage .
+        ?a oa:hasBody "en" .
+    }
+}
+
+True
+2021-09-19 05:15:54,821 - qanary-evaluator - INFO - question: How many cases were reported in August in Magdeburg?, result: True, sparql: 01_language_detection.sparql
+2021-09-19 05:15:54,821 - qanary-evaluator - INFO -  ... 01_language_detection.sparql: True (240 ms)
+2021-09-19 05:15:54,821 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'March', 'YEAR': 2020, 'PLACE_LABEL': 'Altmarkkreis Salzwedel', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q6061'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+2021-09-19 05:15:54,873 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'March', 'YEAR': 2020, 'PLACE_LABEL': 'Altmarkkreis Salzwedel', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q6061'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+02_question_classification.sparql
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+ASK
+WHERE {
+    GRAPH <urn:graph:fd7d1991-9c8c-432e-8e76-6f391e0971bb> {
+        ?a a qa:AnnotationOfQuestionClassification .
+        ?a oa:hasBody ?body .
+        FILTER("infection_location_time" = ?body)
+        ?a oa:annotatedBy ?component .
+        ?a oa:annotatedAt ?time .
+        ?a qa:score ?score .
+    }
+}
+
+True
+2021-09-19 05:15:54,873 - qanary-evaluator - INFO - question: How many cases were reported in August in Magdeburg?, result: True, sparql: 02_question_classification.sparql
+2021-09-19 05:15:54,874 - qanary-evaluator - INFO -  ... 02_question_classification.sparql: True (53 ms)
+2021-09-19 05:15:54,874 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'March', 'YEAR': 2020, 'PLACE_LABEL': 'Altmarkkreis Salzwedel', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q6061'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+2021-09-19 05:15:54,930 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'March', 'YEAR': 2020, 'PLACE_LABEL': 'Altmarkkreis Salzwedel', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q6061'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+03_time_recognition.sparql
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+# checks if an annotation of time is available 
+ASK 
+WHERE {
+    GRAPH <urn:graph:fd7d1991-9c8c-432e-8e76-6f391e0971bb> {
+        {
+            ?a a qa:AnnotationOfInstanceTime .
+            ?a oa:hasBody [
+                a oa:TimeSpan ;
+                oa:start ?start ;
+                oa:end ?end
+            ] .
+            ?a oa:annotatedBy ?component .
+            ?a oa:annotatedAt ?time .
+        } 
+        UNION
+        { # don't care about this query if no time is contained in the current question
+            ?s ?p ?o . 
+            FILTER("False" = "True")
+        }
+    }
+}
+
+True
+2021-09-19 05:15:54,930 - qanary-evaluator - INFO - question: How many cases were reported in August in Magdeburg?, result: True, sparql: 03_time_recognition.sparql
+2021-09-19 05:15:54,930 - qanary-evaluator - INFO -  ... 03_time_recognition.sparql: True (56 ms)
+2021-09-19 05:15:54,930 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'March', 'YEAR': 2020, 'PLACE_LABEL': 'Altmarkkreis Salzwedel', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q6061'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+2021-09-19 05:15:54,986 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'March', 'YEAR': 2020, 'PLACE_LABEL': 'Altmarkkreis Salzwedel', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q6061'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+04_ned.sparql
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+ASK
+WHERE {
+    GRAPH <urn:graph:fd7d1991-9c8c-432e-8e76-6f391e0971bb> {
+        ?a a qa:AnnotationOfInstance .
+        ?a oa:hasTarget [
+            a oa:SpecificResource ;
+            oa:hasSource ?source ;
+            oa:hasSelector [
+                a oa:TextPositionSelector ;
+                oa:start ?start ; 
+                oa:end ?end 
+            ]
+        ] .
+        ?a oa:hasBody <http://www.wikidata.org/entity/Q6061> . 
+        ?a oa:annotatedBy ?component . 
+        ?a oa:annotatedAt ?time .
+        ?a qa:score ?score .
+    }
+}
+False
+2021-09-19 05:15:54,986 - qanary-evaluator - INFO - question: How many cases were reported in August in Magdeburg?, result: False, sparql: 04_ned.sparql
+2021-09-19 05:15:54,986 - qanary-evaluator - INFO -  ... 04_ned.sparql: False (56 ms)
+2021-09-19 05:15:54,986 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'March', 'YEAR': 2020, 'PLACE_LABEL': 'Altmarkkreis Salzwedel', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q6061'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+2021-09-19 05:15:55,162 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'March', 'YEAR': 2020, 'PLACE_LABEL': 'Altmarkkreis Salzwedel', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q6061'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+05_location_to_german_district.sparql
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+ASK
+WHERE {
+    GRAPH <urn:graph:fd7d1991-9c8c-432e-8e76-6f391e0971bb> {
+        ?a a qa:AnnotationOfInstanceLocation .
+        ?a oa:hasBody [
+            dbo:type <https://dbpedia.org/resource/Districts_of_Germany> ;
+            rdfs:label ?label ;
+            qa:hasID ?qid
+        ] .
+        FILTER("Altmarkkreis Salzwedel" = ?label)
+        ?a qa:hasConfidence ?score .
+        ?a oa:hasTarget [
+            rdfs:label ?target ;
+            qa:targetRelation ?targetRelation
+        ] .
+        ?a oa:annotatedBy ?component  .
+        ?a oa:annotatedAt ?time .
+    }
+}
+False
+2021-09-19 05:15:55,162 - qanary-evaluator - INFO - question: How many cases were reported in August in Magdeburg?, result: False, sparql: 05_location_to_german_district.sparql
+2021-09-19 05:15:55,162 - qanary-evaluator - INFO -  ... 05_location_to_german_district.sparql: False (176 ms)
+2021-09-19 05:15:55,162 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'March', 'YEAR': 2020, 'PLACE_LABEL': 'Altmarkkreis Salzwedel', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q6061'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+2021-09-19 05:15:55,217 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'March', 'YEAR': 2020, 'PLACE_LABEL': 'Altmarkkreis Salzwedel', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q6061'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+06_coronabot_missing_information.sparql
+# should have no results for complete answer
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+# checks if NO missing information were annotated for the current question
+ASK
+WHERE {
+    GRAPH <urn:graph:fd7d1991-9c8c-432e-8e76-6f391e0971bb> {
+        FILTER NOT EXISTS { 
+            ?s a qa:AnnotationOfMissingInformation .
+            ?s oa:hasBody ?MISSING .
+            ?s oa:annotatedBy ?component .
+            ?s oa:annotatedAt ?time .
+        }
+    }
+}
+True
+2021-09-19 05:15:55,217 - qanary-evaluator - INFO - question: How many cases were reported in August in Magdeburg?, result: True, sparql: 06_coronabot_missing_information.sparql
+2021-09-19 05:15:55,217 - qanary-evaluator - INFO -  ... 06_coronabot_missing_information.sparql: True (55 ms)
+2021-09-19 05:15:55,218 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'March', 'YEAR': 2020, 'PLACE_LABEL': 'Altmarkkreis Salzwedel', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q6061'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+2021-09-19 05:15:55,271 - qanary-evaluator - INFO - {'question': 'How many cases were reported in August in Magdeburg?', 'replacements': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True, 'MONTH': 'March', 'YEAR': 2020, 'PLACE_LABEL': 'Altmarkkreis Salzwedel', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q6061'}, 'template': {'last': True, 'questions': ['How many cases were reported in August in Magdeburg?'], 'parameters': {'QUESTION_CLASS': 'infection_location_time', 'CONTAINS_TIME': True}}}
+07_rki_query.sparql
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+ASK
+WHERE {
+    GRAPH <urn:graph:fd7d1991-9c8c-432e-8e76-6f391e0971bb> {
+        ?s a qa:AnnotationOfQuery .
+        ?s oa:hasBody ?query .
+        ?s oa:hasTarget ?location_key .
+        ?s oa:annotatedBy ?component .
+        ?s oa:annotatedAt ?time .
+    }
+}
+
+True
+2021-09-19 05:15:55,271 - qanary-evaluator - INFO - question: How many cases were reported in August in Magdeburg?, result: True, sparql: 07_rki_query.sparql
+2021-09-19 05:15:55,271 - qanary-evaluator - INFO -  ... 07_rki_query.sparql: True (54 ms)
+2021-09-19 05:15:55,272 - qanary-evaluator - INFO - custom function: True (0 ms)
+2021-09-19 05:15:55,272 - qanary-evaluator - INFO - 3. TEST: {'question': 'How many cases were reported on the first of May 2020?',
+ 'replacements': {'CONTAINS_TIME': True,
+                  'LANGUAGE': 'en',
+                  'MONTH': 'May',
+                  'PLACE_LABEL': 'Niederschlesischer Oberlausitzkreis',
+                  'PLACE_URL': 'http://www.wikidata.org/entity/Q20259',
+                  'QUESTION_CLASS': 'infection_time',
+                  'YEAR': 2020},
+ 'template': {'last': False,
+              'parameters': {'CONTAINS_TIME': True,
+                             'QUESTION_CLASS': 'infection_time'},
+              'questions': ['How many cases were reported on the first of '
+                            '[MONTH] [YEAR]?']}}
+2021-09-19 05:15:55,273 - qanary-evaluator - INFO - request parameter for Qanary system:
+{'componentlist[]': ['LD-Shuyo',
+                     'coronabot-dialog-flow',
+                     'coronabot-question-classification',
+                     'coronabot-named-entity-recognition-time-en',
+                     'coronabot-named-entity-recognition-time-de',
+                     'coronabot-named-entity-recognition-location-en',
+                     'coronabot-named-entity-recognition-location-de',
+                     'OpenTapiocaNED',
+                     'LocationToGermanDistrict',
+                     'coronabot-missing-information',
+                     'coronabot-query-generation',
+                     'coronabot-data-acquisition',
+                     'coronabot-answer-generation'],
+ 'question': 'How many cases were reported on the first of May 2020?'}
+2021-09-19 05:20:32,877 - qanary-evaluator - INFO - request as curl:
+curl -X POST -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Content-Length: 722' -H 'Content-Type: application/x-www-form-urlencoded' -H 'User-Agent: python-requests/2.25.0' -d 'question=How+many+cases+were+reported+on+the+first+of+May+2020%3F&componentlist%5B%5D=LD-Shuyo&componentlist%5B%5D=coronabot-dialog-flow&componentlist%5B%5D=coronabot-question-classification&componentlist%5B%5D=coronabot-named-entity-recognition-time-en&componentlist%5B%5D=coronabot-named-entity-recognition-time-de&componentlist%5B%5D=coronabot-named-entity-recognition-location-en&componentlist%5B%5D=coronabot-named-entity-recognition-location-de&componentlist%5B%5D=OpenTapiocaNED&componentlist%5B%5D=LocationToGermanDistrict&componentlist%5B%5D=coronabot-missing-information&componentlist%5B%5D=coronabot-query-generation&componentlist%5B%5D=coronabot-data-acquisition&componentlist%5B%5D=coronabot-answer-generation' https://webengineering.ins.hs-anhalt.de:43740/startquestionansweringwithtextquestion
+2021-09-19 05:20:32,877 - qanary-evaluator - INFO - response of Qanary system:
+{'endpoint': 'http://admin:admin@webengineering.ins.hs-anhalt.de:40158/qanary',
+ 'inGraph': 'urn:graph:8d698c7f-30df-498e-9852-9849b72841bb',
+ 'outGraph': 'urn:graph:8d698c7f-30df-498e-9852-9849b72841bb',
+ 'question': 'https://webengineering.ins.hs-anhalt.de:43740/question/stored-question__text_63b7958e-9147-49a9-b5c7-b4f4a6b2d2e4'}
+2021-09-19 05:20:32,879 - qanary-evaluator - INFO - {'question': 'How many cases were reported on the first of May 2020?', 'replacements': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True, 'MONTH': 'May', 'YEAR': 2020, 'PLACE_LABEL': 'Niederschlesischer Oberlausitzkreis', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20259'}, 'template': {'last': False, 'questions': ['How many cases were reported on the first of [MONTH] [YEAR]?'], 'parameters': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True}}}
+2021-09-19 05:20:33,155 - qanary-evaluator - INFO - {'question': 'How many cases were reported on the first of May 2020?', 'replacements': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True, 'MONTH': 'May', 'YEAR': 2020, 'PLACE_LABEL': 'Niederschlesischer Oberlausitzkreis', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20259'}, 'template': {'last': False, 'questions': ['How many cases were reported on the first of [MONTH] [YEAR]?'], 'parameters': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True}}}
+01_language_detection.sparql
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+ASK
+WHERE {
+    GRAPH <urn:graph:8d698c7f-30df-498e-9852-9849b72841bb> {
+        ?a a qa:AnnotationOfQuestionLanguage .
+        ?a oa:hasBody "en" .
+    }
+}
+
+True
+2021-09-19 05:20:33,156 - qanary-evaluator - INFO - question: How many cases were reported on the first of May 2020?, result: True, sparql: 01_language_detection.sparql
+2021-09-19 05:20:33,156 - qanary-evaluator - INFO -  ... 01_language_detection.sparql: True (277 ms)
+2021-09-19 05:20:33,156 - qanary-evaluator - INFO - {'question': 'How many cases were reported on the first of May 2020?', 'replacements': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True, 'MONTH': 'May', 'YEAR': 2020, 'PLACE_LABEL': 'Niederschlesischer Oberlausitzkreis', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20259'}, 'template': {'last': False, 'questions': ['How many cases were reported on the first of [MONTH] [YEAR]?'], 'parameters': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True}}}
+2021-09-19 05:20:33,208 - qanary-evaluator - INFO - {'question': 'How many cases were reported on the first of May 2020?', 'replacements': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True, 'MONTH': 'May', 'YEAR': 2020, 'PLACE_LABEL': 'Niederschlesischer Oberlausitzkreis', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20259'}, 'template': {'last': False, 'questions': ['How many cases were reported on the first of [MONTH] [YEAR]?'], 'parameters': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True}}}
+02_question_classification.sparql
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+ASK
+WHERE {
+    GRAPH <urn:graph:8d698c7f-30df-498e-9852-9849b72841bb> {
+        ?a a qa:AnnotationOfQuestionClassification .
+        ?a oa:hasBody ?body .
+        FILTER("infection_time" = ?body)
+        ?a oa:annotatedBy ?component .
+        ?a oa:annotatedAt ?time .
+        ?a qa:score ?score .
+    }
+}
+
+True
+2021-09-19 05:20:33,208 - qanary-evaluator - INFO - question: How many cases were reported on the first of May 2020?, result: True, sparql: 02_question_classification.sparql
+2021-09-19 05:20:33,209 - qanary-evaluator - INFO -  ... 02_question_classification.sparql: True (53 ms)
+2021-09-19 05:20:33,209 - qanary-evaluator - INFO - {'question': 'How many cases were reported on the first of May 2020?', 'replacements': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True, 'MONTH': 'May', 'YEAR': 2020, 'PLACE_LABEL': 'Niederschlesischer Oberlausitzkreis', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20259'}, 'template': {'last': False, 'questions': ['How many cases were reported on the first of [MONTH] [YEAR]?'], 'parameters': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True}}}
+2021-09-19 05:20:33,265 - qanary-evaluator - INFO - {'question': 'How many cases were reported on the first of May 2020?', 'replacements': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True, 'MONTH': 'May', 'YEAR': 2020, 'PLACE_LABEL': 'Niederschlesischer Oberlausitzkreis', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20259'}, 'template': {'last': False, 'questions': ['How many cases were reported on the first of [MONTH] [YEAR]?'], 'parameters': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True}}}
+03_time_recognition.sparql
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+# checks if an annotation of time is available 
+ASK 
+WHERE {
+    GRAPH <urn:graph:8d698c7f-30df-498e-9852-9849b72841bb> {
+        {
+            ?a a qa:AnnotationOfInstanceTime .
+            ?a oa:hasBody [
+                a oa:TimeSpan ;
+                oa:start ?start ;
+                oa:end ?end
+            ] .
+            ?a oa:annotatedBy ?component .
+            ?a oa:annotatedAt ?time .
+        } 
+        UNION
+        { # don't care about this query if no time is contained in the current question
+            ?s ?p ?o . 
+            FILTER("False" = "True")
+        }
+    }
+}
+
+True
+2021-09-19 05:20:33,265 - qanary-evaluator - INFO - question: How many cases were reported on the first of May 2020?, result: True, sparql: 03_time_recognition.sparql
+2021-09-19 05:20:33,266 - qanary-evaluator - INFO -  ... 03_time_recognition.sparql: True (57 ms)
+2021-09-19 05:20:33,266 - qanary-evaluator - INFO - {'question': 'How many cases were reported on the first of May 2020?', 'replacements': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True, 'MONTH': 'May', 'YEAR': 2020, 'PLACE_LABEL': 'Niederschlesischer Oberlausitzkreis', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20259'}, 'template': {'last': False, 'questions': ['How many cases were reported on the first of [MONTH] [YEAR]?'], 'parameters': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True}}}
+2021-09-19 05:20:33,320 - qanary-evaluator - INFO - {'question': 'How many cases were reported on the first of May 2020?', 'replacements': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True, 'MONTH': 'May', 'YEAR': 2020, 'PLACE_LABEL': 'Niederschlesischer Oberlausitzkreis', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20259'}, 'template': {'last': False, 'questions': ['How many cases were reported on the first of [MONTH] [YEAR]?'], 'parameters': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True}}}
+04_ned.sparql
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+ASK
+WHERE {
+    GRAPH <urn:graph:8d698c7f-30df-498e-9852-9849b72841bb> {
+        ?a a qa:AnnotationOfInstance .
+        ?a oa:hasTarget [
+            a oa:SpecificResource ;
+            oa:hasSource ?source ;
+            oa:hasSelector [
+                a oa:TextPositionSelector ;
+                oa:start ?start ; 
+                oa:end ?end 
+            ]
+        ] .
+        ?a oa:hasBody <http://www.wikidata.org/entity/Q20259> . 
+        ?a oa:annotatedBy ?component . 
+        ?a oa:annotatedAt ?time .
+        ?a qa:score ?score .
+    }
+}
+False
+2021-09-19 05:20:33,320 - qanary-evaluator - INFO - question: How many cases were reported on the first of May 2020?, result: False, sparql: 04_ned.sparql
+2021-09-19 05:20:33,320 - qanary-evaluator - INFO -  ... 04_ned.sparql: False (54 ms)
+2021-09-19 05:20:33,320 - qanary-evaluator - INFO - {'question': 'How many cases were reported on the first of May 2020?', 'replacements': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True, 'MONTH': 'May', 'YEAR': 2020, 'PLACE_LABEL': 'Niederschlesischer Oberlausitzkreis', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20259'}, 'template': {'last': False, 'questions': ['How many cases were reported on the first of [MONTH] [YEAR]?'], 'parameters': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True}}}
+2021-09-19 05:20:33,504 - qanary-evaluator - INFO - {'question': 'How many cases were reported on the first of May 2020?', 'replacements': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True, 'MONTH': 'May', 'YEAR': 2020, 'PLACE_LABEL': 'Niederschlesischer Oberlausitzkreis', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20259'}, 'template': {'last': False, 'questions': ['How many cases were reported on the first of [MONTH] [YEAR]?'], 'parameters': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True}}}
+05_location_to_german_district.sparql
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+ASK
+WHERE {
+    GRAPH <urn:graph:8d698c7f-30df-498e-9852-9849b72841bb> {
+        ?a a qa:AnnotationOfInstanceLocation .
+        ?a oa:hasBody [
+            dbo:type <https://dbpedia.org/resource/Districts_of_Germany> ;
+            rdfs:label ?label ;
+            qa:hasID ?qid
+        ] .
+        FILTER("Niederschlesischer Oberlausitzkreis" = ?label)
+        ?a qa:hasConfidence ?score .
+        ?a oa:hasTarget [
+            rdfs:label ?target ;
+            qa:targetRelation ?targetRelation
+        ] .
+        ?a oa:annotatedBy ?component  .
+        ?a oa:annotatedAt ?time .
+    }
+}
+False
+2021-09-19 05:20:33,504 - qanary-evaluator - INFO - question: How many cases were reported on the first of May 2020?, result: False, sparql: 05_location_to_german_district.sparql
+2021-09-19 05:20:33,504 - qanary-evaluator - INFO -  ... 05_location_to_german_district.sparql: False (184 ms)
+2021-09-19 05:20:33,504 - qanary-evaluator - INFO - {'question': 'How many cases were reported on the first of May 2020?', 'replacements': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True, 'MONTH': 'May', 'YEAR': 2020, 'PLACE_LABEL': 'Niederschlesischer Oberlausitzkreis', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20259'}, 'template': {'last': False, 'questions': ['How many cases were reported on the first of [MONTH] [YEAR]?'], 'parameters': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True}}}
+2021-09-19 05:20:33,565 - qanary-evaluator - INFO - {'question': 'How many cases were reported on the first of May 2020?', 'replacements': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True, 'MONTH': 'May', 'YEAR': 2020, 'PLACE_LABEL': 'Niederschlesischer Oberlausitzkreis', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20259'}, 'template': {'last': False, 'questions': ['How many cases were reported on the first of [MONTH] [YEAR]?'], 'parameters': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True}}}
+06_coronabot_missing_information.sparql
+# should have no results for complete answer
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+# checks if NO missing information were annotated for the current question
+ASK
+WHERE {
+    GRAPH <urn:graph:8d698c7f-30df-498e-9852-9849b72841bb> {
+        FILTER NOT EXISTS { 
+            ?s a qa:AnnotationOfMissingInformation .
+            ?s oa:hasBody ?MISSING .
+            ?s oa:annotatedBy ?component .
+            ?s oa:annotatedAt ?time .
+        }
+    }
+}
+True
+2021-09-19 05:20:33,566 - qanary-evaluator - INFO - question: How many cases were reported on the first of May 2020?, result: True, sparql: 06_coronabot_missing_information.sparql
+2021-09-19 05:20:33,566 - qanary-evaluator - INFO -  ... 06_coronabot_missing_information.sparql: True (61 ms)
+2021-09-19 05:20:33,566 - qanary-evaluator - INFO - {'question': 'How many cases were reported on the first of May 2020?', 'replacements': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True, 'MONTH': 'May', 'YEAR': 2020, 'PLACE_LABEL': 'Niederschlesischer Oberlausitzkreis', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20259'}, 'template': {'last': False, 'questions': ['How many cases were reported on the first of [MONTH] [YEAR]?'], 'parameters': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True}}}
+2021-09-19 05:20:33,618 - qanary-evaluator - INFO - {'question': 'How many cases were reported on the first of May 2020?', 'replacements': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True, 'MONTH': 'May', 'YEAR': 2020, 'PLACE_LABEL': 'Niederschlesischer Oberlausitzkreis', 'LANGUAGE': 'en', 'PLACE_URL': 'http://www.wikidata.org/entity/Q20259'}, 'template': {'last': False, 'questions': ['How many cases were reported on the first of [MONTH] [YEAR]?'], 'parameters': {'QUESTION_CLASS': 'infection_time', 'CONTAINS_TIME': True}}}
+07_rki_query.sparql
+PREFIX qa: <http://www.wdaqua.eu/qa#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+ASK
+WHERE {
+    GRAPH <urn:graph:8d698c7f-30df-498e-9852-9849b72841bb> {
+        ?s a qa:AnnotationOfQuery .
+        ?s oa:hasBody ?query .
+        ?s oa:hasTarget ?location_key .
+        ?s oa:annotatedBy ?component .
+        ?s oa:annotatedAt ?time .
+    }
+}
+
+False
+2021-09-19 05:20:33,618 - qanary-evaluator - INFO - question: How many cases were reported on the first of May 2020?, result: False, sparql: 07_rki_query.sparql
+2021-09-19 05:20:33,618 - qanary-evaluator - INFO -  ... 07_rki_query.sparql: False (52 ms)
+2021-09-19 05:20:33,619 - qanary-evaluator - INFO - custom function: True (0 ms)
+2021-09-19 05:20:33,621 - qanary-evaluator - INFO - 
+----------------------------------------
+Complete results:
+[{'graph': 'urn:graph:52811e16-7325-494e-a9b6-46958f786274',
+  'question': 'Infections in Nordfriesland district and Kiel?',
+  'results': [{'01_language_detection.sparql': True},
+              {'02_question_classification.sparql': True},
+              {'03_time_recognition.sparql': True},
+              {'04_ned.sparql': True},
+              {'05_location_to_german_district.sparql': True},
+              {'06_coronabot_missing_information.sparql': True},
+              {'07_rki_query.sparql': True},
+              {'custom_evaluation': True}]},
+ {'graph': 'urn:graph:2560a59a-c7fc-424a-a57e-1fc00868675f',
+  'question': 'How many cases were reported in August in Magdeburg?',
+  'results': [{'01_language_detection.sparql': True},
+              {'02_question_classification.sparql': True},
+              {'03_time_recognition.sparql': True},
+              {'04_ned.sparql': False},
+              {'05_location_to_german_district.sparql': False},
+              {'06_coronabot_missing_information.sparql': True},
+              {'07_rki_query.sparql': True},
+              {'custom_evaluation': True}]},
+ {'graph': 'urn:graph:fd7d1991-9c8c-432e-8e76-6f391e0971bb',
+  'question': 'How many cases were reported in August in Magdeburg?',
+  'results': [{'01_language_detection.sparql': True},
+              {'02_question_classification.sparql': True},
+              {'03_time_recognition.sparql': True},
+              {'04_ned.sparql': False},
+              {'05_location_to_german_district.sparql': False},
+              {'06_coronabot_missing_information.sparql': True},
+              {'07_rki_query.sparql': True},
+              {'custom_evaluation': True}]},
+ {'graph': 'urn:graph:8d698c7f-30df-498e-9852-9849b72841bb',
+  'question': 'How many cases were reported on the first of May 2020?',
+  'results': [{'01_language_detection.sparql': True},
+              {'02_question_classification.sparql': True},
+              {'03_time_recognition.sparql': True},
+              {'04_ned.sparql': False},
+              {'05_location_to_german_district.sparql': False},
+              {'06_coronabot_missing_information.sparql': True},
+              {'07_rki_query.sparql': False},
+              {'custom_evaluation': True}]}]
+2021-09-19 05:20:33,624 - qanary-evaluator - INFO - runtime: 459 secs
+2021-09-19 05:20:33,642 - qanary-evaluator - INFO - final result table:
+                                                   01_language_detection.sparql  ...                                           graph
+Infections in Nordfriesland district and Kiel?                             True  ...  urn:graph:52811e16-7325-494e-a9b6-46958f786274
+How many cases were reported in August in Magde...                         True  ...  urn:graph:fd7d1991-9c8c-432e-8e76-6f391e0971bb
+How many cases were reported on the first of Ma...                         True  ...  urn:graph:8d698c7f-30df-498e-9852-9849b72841bb
+average                                                                       1  ...                                                
+
+[4 rows x 9 columns]

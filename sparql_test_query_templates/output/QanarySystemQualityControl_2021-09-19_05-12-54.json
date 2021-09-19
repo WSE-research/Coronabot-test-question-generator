@@ -1,0 +1,122 @@
+[
+    {
+        "question": "Infections in Nordfriesland district and Kiel?",
+        "graph": "urn:graph:52811e16-7325-494e-a9b6-46958f786274",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many cases were reported in August in Magdeburg?",
+        "graph": "urn:graph:2560a59a-c7fc-424a-a57e-1fc00868675f",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many cases were reported in August in Magdeburg?",
+        "graph": "urn:graph:fd7d1991-9c8c-432e-8e76-6f391e0971bb",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many cases were reported on the first of May 2020?",
+        "graph": "urn:graph:8d698c7f-30df-498e-9852-9849b72841bb",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    }
+]
