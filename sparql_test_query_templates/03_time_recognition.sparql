@@ -1,15 +1,23 @@
 PREFIX qa: <http://www.wdaqua.eu/qa#>
 PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+# checks if an annotation of time is available 
 ASK 
 WHERE {
-    GRAPH ?GRAPH {
-        ?a a qa:AnnotationOfInstanceTime .
-        ?a oa:hasBody [
-            a oa:TimeSpan ;
-            oa:start ?START ;
-            oa:end ?END
-        ] .
-        ?a oa:annotatedBy ?component .
-        ?a oa:annotatedAt ?time .
+    GRAPH <GRAPHID> {
+        {
+            ?a a qa:AnnotationOfInstanceTime .
+            ?a oa:hasBody [
+                a oa:TimeSpan ;
+                oa:start ?start ;
+                oa:end ?end
+            ] .
+            ?a oa:annotatedBy ?component .
+            ?a oa:annotatedAt ?time .
+        } 
+        UNION
+        { # don't care about this query if no time is contained in the current question
+            ?s ?p ?o . 
+            FILTER("False" = "CONTAINS_TIME")
+        }
     }
 }

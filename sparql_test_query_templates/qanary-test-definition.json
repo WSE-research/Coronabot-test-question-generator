@@ -4,6 +4,7 @@
         "componentlist": [
             "LD-Shuyo",
             "coronabot-dialog-flow",
+            "coronabot-question-classification",
             "coronabot-named-entity-recognition-time-en",
             "coronabot-named-entity-recognition-time-de",
             "coronabot-named-entity-recognition-location-en",
@@ -22,71 +23,101 @@
     },
     "tests": [
         {
-            "question": "What was the death toll in Nordfriesland district during the last June?",
+            "question": "Infections in Nordfriesland district and Kiel?",
             "replacements": {
+                "QUESTION_CLASS": "infection_location",
+                "CONTAINS_TIME": false,
                 "MONTH": "June",
-                "YEAR": 2020,
-                "PLACE": "Nordfriesland district",
-                "LANGUAGE": "en"
+                "YEAR": 2021,
+                "PLACE_LABEL": "Nordfriesland district",
+                "LANGUAGE": "en",
+                "PLACE_URL": "http://www.wikidata.org/entity/Q2937"
             },
             "template": {
-                "intent": "deaths",
+                "last": false,
+                "questions": [
+                    "Infections in [PLACE_LABEL] and Kiel?"
+                ],
+                "parameters": {
+                    "QUESTION_CLASS": "infection_location",
+                    "CONTAINS_TIME": false
+                }
+            }
+        },
+        {
+            "question": "How many cases were reported in August in Magdeburg?",
+            "replacements": {
+                "QUESTION_CLASS": "infection_location_time",
+                "CONTAINS_TIME": true,
+                "MONTH": "February",
+                "YEAR": 2020,
+                "PLACE_LABEL": "Mittweida",
+                "LANGUAGE": "en",
+                "PLACE_URL": "http://www.wikidata.org/entity/Q20253"
+            },
+            "template": {
                 "last": true,
                 "questions": [
-                    "What was the death toll in [PLACE] during the last [MONTH]?"
-                ]
+                    "How many cases were reported in August in Magdeburg?"
+                ],
+                "parameters": {
+                    "QUESTION_CLASS": "infection_location_time",
+                    "CONTAINS_TIME": true
+                }
             }
         },
         {
-            "question": "What was the number of incidents of Burgenlandkreis in 2021?",
+            "question": "How many cases were reported in August in Magdeburg?",
             "replacements": {
-                "MONTH": "April",
-                "YEAR": 2021,
-                "PLACE": "Burgenlandkreis",
-                "LANGUAGE": "en"
+                "QUESTION_CLASS": "infection_location_time",
+                "CONTAINS_TIME": true,
+                "MONTH": "March",
+                "YEAR": 2020,
+                "PLACE_LABEL": "Altmarkkreis Salzwedel",
+                "LANGUAGE": "en",
+                "PLACE_URL": "http://www.wikidata.org/entity/Q6061"
             },
             "template": {
-                "intent": "incidents",
-                "last": false,
+                "last": true,
                 "questions": [
-                    "What was the number of incidents of [PLACE] in [YEAR]?"
-                ]
+                    "How many cases were reported in August in Magdeburg?"
+                ],
+                "parameters": {
+                    "QUESTION_CLASS": "infection_location_time",
+                    "CONTAINS_TIME": true
+                }
             }
         },
         {
-            "question": "How many infections were there in Dithmarschen in May 2020?",
+            "question": "How many cases were reported on the first of May 2020?",
             "replacements": {
+                "QUESTION_CLASS": "infection_time",
+                "CONTAINS_TIME": true,
                 "MONTH": "May",
                 "YEAR": 2020,
-                "PLACE": "Dithmarschen",
-                "LANGUAGE": "en"
+                "PLACE_LABEL": "Niederschlesischer Oberlausitzkreis",
+                "LANGUAGE": "en",
+                "PLACE_URL": "http://www.wikidata.org/entity/Q20259"
             },
             "template": {
-                "intent": "incidents",
                 "last": false,
                 "questions": [
-                    "How many infections were there in [PLACE] in [MONTH] [YEAR]?"
-                ]
-            }
-        },
-        {
-            "question": "How many infections were there in Nordfriesland district in January 2020?",
-            "replacements": {
-                "MONTH": "January",
-                "YEAR": 2020,
-                "PLACE": "Nordfriesland district",
-                "LANGUAGE": "en"
-            },
-            "template": {
-                "intent": "incidents",
-                "last": false,
-                "questions": [
-                    "How many infections were there in [PLACE] in [MONTH] [YEAR]?"
-                ]
+                    "How many cases were reported on the first of [MONTH] [YEAR]?"
+                ],
+                "parameters": {
+                    "QUESTION_CLASS": "infection_time",
+                    "CONTAINS_TIME": true
+                }
             }
         }
     ],
     "validation-sparql-templates": [
-        "01_language_detection.sparql"
+        "01_language_detection.sparql",
+        "02_question_classification.sparql",
+        "03_time_recognition.sparql",
+        "04_ned.sparql",
+        "05_location_to_german_district.sparql",
+        "06_coronabot_missing_information.sparql",
+        "07_rki_query.sparql"
     ]
 }

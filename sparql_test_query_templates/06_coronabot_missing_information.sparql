@@ -1,12 +1,15 @@
 # should have no results for complete answer
 PREFIX qa: <http://www.wdaqua.eu/qa#>
 PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+# checks if NO missing information were annotated for the current question
 ASK
 WHERE {
-    GRAPH ?GRAPH {
-        ?s a qa:AnnotationOfMissingInformation .
-        ?s oa:hasBody ?MISSING .
-        ?s oa:annotatedBy ?component .
-        ?s oa:annotatedAt ?time .
+    GRAPH <GRAPHID> {
+        FILTER NOT EXISTS { 
+            ?s a qa:AnnotationOfMissingInformation .
+            ?s oa:hasBody ?MISSING .
+            ?s oa:annotatedBy ?component .
+            ?s oa:annotatedAt ?time .
+        }
     }
 }

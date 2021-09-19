@@ -4,13 +4,14 @@ PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 ASK
 WHERE {
-    GRAPH ?GRAPH {
+    GRAPH <GRAPHID> {
         ?a a qa:AnnotationOfInstanceLocation .
         ?a oa:hasBody [
-            dbo:type ?DBOTYPE;
-            rdfs:label ?LABEL;
+            dbo:type <https://dbpedia.org/resource/Districts_of_Germany> ;
+            rdfs:label ?label ;
             qa:hasID ?qid
         ] .
+        FILTER("PLACE_LABEL" = ?label)
         ?a qa:hasConfidence ?score .
         ?a oa:hasTarget [
             rdfs:label ?target ;

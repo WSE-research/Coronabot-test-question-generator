@@ -12,6 +12,8 @@ import argparse
 import importlib
 import inspect
 import curlify # pip3 install curlify
+from termcolor import colored 
+
 
 sheet_name = "QanarySystemQualityControl"
 outdir = "output"
@@ -95,10 +97,9 @@ def sparql_execute_query(logger, question, configuration_directory, sparql_templ
     logger.info(question)
     replacements = question.get("replacements")
     sparql_query_complete = prepare_sparql_query(logger, configuration_directory+"/"+sparql_template_filename, replacements, graphid)
-    logger.info(sparql_query_complete)
     try:
         result = connection.ask(sparql_query_complete)
-        logger.info("%s\t%s\t%s" % (question, sparql_template_filename, result))
+        logger.info("%s\n%s\n%s\n%s" % (question, sparql_template_filename, sparql_query_complete, result))
         return result
     except Exception as e:
         message = "query could not be executed: %s\n%s" % (e, sparql_query_complete)
@@ -126,8 +127,8 @@ def evaluate_tests(logger, conf_qanary, configuration_directory, validation_spar
 
     for nr,test in enumerate(tests):
         question = test.get("question")
-        logger.info("%d. test: %s" % (nr, pprint.pformat(test)) )
-        print("\n%d. test: %s" % (nr, question))
+        logger.info("%d. TEST: %s" % (nr, pprint.pformat(test)) )
+        print("\n" + colored(nr, "yellow") + f". TEST: {question}")
 
         qanary_response = request_qanary_endpoint_for_question(logger, conf_qanary, question)
 
@@ -136,12 +137,16 @@ def evaluate_tests(logger, conf_qanary, configuration_directory, validation_spar
         connection = connect_to_triplestore(conf_qanary, endpoint)
 
         result_per_test = []
-        for validation_sparql_template in validation_sparql_templates:
+        for nr,validation_sparql_template in enumerate(validation_sparql_templates):
             start = datetime.datetime.now()
             result = evaluate_test(logger, conf_qanary, configuration_directory, test, validation_sparql_template, connection, graphid)
             milliseconds = measure_duration_in_milliseconds(start)
 
-            print(" ... %s (%d ms)" % (result, milliseconds), end='')
+            if result:
+                result_colored = colored(result, "green")
+            else:
+                result_colored = colored(result, "red")
+            print(f" ... {nr}:{result_colored} ({milliseconds} ms)", end='')
             logger.info(" ... %s: %s (%d ms)" % (validation_sparql_template, result, milliseconds))
 
             result_per_test.append({validation_sparql_template:result})
