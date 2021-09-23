@@ -1,0 +1,1502 @@
+[
+    {
+        "question": "What was the death toll in Coesfeld during the last July?",
+        "graph": "urn:graph:edca0d4b-7684-4cd2-bf5e-d7f8179a8fee",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many people died in Annaberg last May?",
+        "graph": "urn:graph:43de7bf6-839d-417a-b318-3a73c0db809b",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many deaths were reported last February in K\u00f6then?",
+        "graph": "urn:graph:c9b4bb73-db37-4153-8cfa-9ff0d9104361",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "covid deaths in Unna last August",
+        "graph": "urn:graph:d1bb8468-f29e-4df5-beb3-04c1cee7cad7",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "how many deaths did Halberstadt have last February?",
+        "graph": "urn:graph:c900896f-2077-4636-893d-0879d734e2db",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "What was the death toll in Olpe during the last January?",
+        "graph": "urn:graph:e8a90cff-7db5-41b5-933c-4e021e9e309f",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many people died in D\u00f6beln last March?",
+        "graph": "urn:graph:5e1fa21b-0124-435a-be2d-fb5aedb22c45",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many deaths were reported last December in Rastatt?",
+        "graph": "urn:graph:ef99057a-15e0-498a-b5ab-26694ba5323c",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "covid deaths in Landkreis Trier last October",
+        "graph": "urn:graph:79868b53-948d-485f-9e29-3c8babaef719",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "how many deaths did Warendorf District have last September?",
+        "graph": "urn:graph:5f9b74bc-a61c-4e40-9c76-205f58db3513",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "What was the death toll in Rotenburg (W\u00fcmme) during June of 2021?",
+        "graph": "urn:graph:94fee6fa-8769-4918-9a81-eb6cb2ed056c",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many people died in L\u00fcchow-Dannenberg District in April 2021?",
+        "graph": "urn:graph:4bb61c5c-3c36-4e4f-aabc-6a77a9125fdc",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many deaths were reported in Rotenburg (W\u00fcmme) in August 2020?",
+        "graph": "urn:graph:3653fcd8-3ce0-48d4-bb76-adcf97989c81",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "covid deaths in Rotenburg (W\u00fcmme) in July of 2020",
+        "graph": "urn:graph:a0579c1c-2b51-42f9-a0a7-a23db6e0da69",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "how many deaths did Wittenberg have in July 2020?",
+        "graph": "urn:graph:5147311d-7623-4f87-862a-5d41f1e29be1",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many cases were reported on the first of last August?",
+        "graph": "urn:graph:cc4bbf24-2e1c-4afa-8b70-ac5e36ee309d",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "What was the number of infections last July?",
+        "graph": "urn:graph:70489015-fdc5-4670-ad72-4c61e3d4224f",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "infections between the first and 28th of last January?",
+        "graph": "urn:graph:b92e7947-c351-4dea-a9f6-a4855f4c7c61",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many people were infected with Covid-19 last January",
+        "graph": "urn:graph:cd949d4d-be5d-4427-9ef5-f99c64a356aa",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": false
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "corona cases last March",
+        "graph": "urn:graph:dc08a87a-5f7f-4baa-8f9d-3f8816d4ed12",
+        "results": [
+            {
+                "01_language_detection.sparql": false
+            },
+            {
+                "02_question_classification.sparql": false
+            },
+            {
+                "03_time_recognition.sparql": false
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many cases were reported on the first of February 2020?",
+        "graph": "urn:graph:d32562ac-e176-4845-84c4-0d7e707e1ee0",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "What was the number of infections during January 2021?",
+        "graph": "urn:graph:7b188d49-7676-4506-904e-9cc94cfea038",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "infections between the first of March 2021 and the 28th of March 2021?",
+        "graph": "urn:graph:303d97e5-5db4-49d7-b282-e82d74a6534a",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many people were infected with Covid-19 in September 2021",
+        "graph": "urn:graph:6aabe948-e1d0-4f46-831b-61e7605790a3",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": false
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "corona cases in October 2020",
+        "graph": "urn:graph:8994416a-98fc-434b-8a98-a424effb601c",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "What was the death toll in Pinneberg during June of 2021?",
+        "graph": "urn:graph:09b8d8a4-30b2-4b31-99f3-90f7ae4eee50",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many people died in Havelland District in June 2021?",
+        "graph": "urn:graph:9086577c-ceff-42d8-b9e3-c770e4a72386",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many deaths were reported in Mecklenburg-Strelitz in September 2020?",
+        "graph": "urn:graph:f8ececd6-6316-4fca-82a1-ad7b247904a6",
+        "results": [
+            {
+                "01_language_detection.sparql": false
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "covid deaths in Nordvorpommern in October of 2020",
+        "graph": "urn:graph:b3903174-88a1-4990-97c5-1f73b28cd495",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "how many deaths did Rotenburg (W\u00fcmme) have in December 2021?",
+        "graph": "urn:graph:6f64de5b-a97c-4492-ada1-eacbdbd04c22",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many people died during last July?",
+        "graph": "urn:graph:280cf679-86f6-4583-90b0-63147789f21a",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many deaths were reported in last June?",
+        "graph": "urn:graph:21354e7a-70eb-4d41-842d-5c306569cdb7",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "covid deaths on the fith of last June",
+        "graph": "urn:graph:0436aa9a-7955-42af-a967-67d3b5da8339",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "What was the death toll last September?",
+        "graph": "urn:graph:1ef111f7-284b-4ef9-a55a-5a18e9f1d424",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "number of deaths from the first until the 15th of last May",
+        "graph": "urn:graph:ebdbc819-c40b-459c-b302-ca2b5185b692",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many infections were there in Heidekreis in August 2021?",
+        "graph": "urn:graph:c2cfa4c6-086e-4178-aed6-ceca4bab6d34",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "In December 2020, how many people were infected in Riesa-Gro\u00dfenhain?",
+        "graph": "urn:graph:1a7ba266-59c0-49c4-9a3c-6fe8673a3a8f",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "Give me the number of cases in Landkreis K\u00f6ln during October 2020!",
+        "graph": "urn:graph:0603876b-94db-4239-b97b-20fed1960a72",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many cases of Covid did Mayen report in February 2021?",
+        "graph": "urn:graph:ae0e041b-4fe5-45d5-ad42-16f3e1d096a4",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "infections in October 2021 in Celle",
+        "graph": "urn:graph:5f643b9e-3465-4af3-b7a2-2df2696f3fdb",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "What was the death toll in Aurich during October of 2020?",
+        "graph": "urn:graph:9f813573-147a-4418-b887-24a5536f2b6a",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many people died in Warburg District in October 2021?",
+        "graph": "urn:graph:2a2497e6-da6d-4df8-8b7f-cbdfab32e526",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many deaths were reported in Oberhavel District in June 2021?",
+        "graph": "urn:graph:e4b31156-d4b7-47cf-89c3-c26a3ffea37a",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "covid deaths in Dithmarschen in June of 2020",
+        "graph": "urn:graph:6b24fc62-1580-41fb-8b8b-859dcd6ad5fa",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "how many deaths did Hochsauerlandkreis have in July 2021?",
+        "graph": "urn:graph:4948b04e-3d41-4ce2-b780-fc8f0fce850f",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many cases were reported on the first of last September?",
+        "graph": "urn:graph:a9aa2b8f-7966-4b77-9ba6-7ab98bd20b93",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "What was the number of infections last November?",
+        "graph": "urn:graph:2f0c5e4c-c72a-4113-bbd1-3cb95106c76b",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "infections between the first and 28th of last March?",
+        "graph": "urn:graph:11407d39-5c9d-4b8d-9aeb-61b352077c22",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many people were infected with Covid-19 last March",
+        "graph": "urn:graph:cc341095-eec4-483b-a4f3-6bd1ef89f4db",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": false
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "corona cases last September",
+        "graph": "urn:graph:5825cfaa-7934-469f-844f-bc4899e7e136",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": false
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    }
+]
