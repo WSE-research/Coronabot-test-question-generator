@@ -3,19 +3,27 @@ PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
 ASK
 WHERE {
     GRAPH <GRAPHID> {
-        ?a a qa:AnnotationOfInstance .
-        ?a oa:hasTarget [
-            a oa:SpecificResource ;
-            oa:hasSource ?source ;
-            oa:hasSelector [
-                a oa:TextPositionSelector ;
-                oa:start ?start ; 
-                oa:end ?end 
-            ]
-        ] .
-        ?a oa:hasBody <PLACE_URL> . 
-        ?a oa:annotatedBy ?component . 
-        ?a oa:annotatedAt ?time .
-        ?a qa:score ?score .
+        {
+            ?a a qa:AnnotationOfInstance .
+            ?a oa:hasTarget [
+                a oa:SpecificResource ;
+                oa:hasSource ?source ;
+                oa:hasSelector [
+                    a oa:TextPositionSelector ;
+                    oa:start ?start ; 
+                    oa:end ?end 
+                ]
+            ] .
+            ?a oa:hasBody <PLACE_URL> . 
+            ?a oa:annotatedBy ?component . 
+            ?a oa:annotatedAt ?time .
+            ?a qa:score ?score .
+        }
+        UNION
+        { # don't care about this query if no time is contained in the current question
+            ?s ?p ?o . 
+            FILTER("False" = "CONTAINS_PLACE")
+        }
+
     }
 }

@@ -5,8 +5,15 @@ WHERE {
     GRAPH <GRAPHID> {
         ?s a qa:AnnotationOfQuery .
         ?s oa:hasBody ?query .
-        ?s oa:hasTarget ?location_key .
         ?s oa:annotatedBy ?component .
         ?s oa:annotatedAt ?time .
+        {
+            ?s oa:hasTarget ?location_key .
+        }
+        UNION
+        { # don't care about this query if no place is contained in the current question
+            ?s ?p ?o . 
+            FILTER("False" = "CONTAINS_PLACE")
+        }
     }
 }

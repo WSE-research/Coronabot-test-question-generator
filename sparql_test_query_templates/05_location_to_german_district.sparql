@@ -5,19 +5,26 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 ASK
 WHERE {
     GRAPH <GRAPHID> {
-        ?a a qa:AnnotationOfInstanceLocation .
-        ?a oa:hasBody [
-            dbo:type <https://dbpedia.org/resource/Districts_of_Germany> ;
-            rdfs:label ?label ;
-            qa:hasID ?qid
-        ] .
-        FILTER("PLACE_LABEL" = ?label)
-        ?a qa:hasConfidence ?score .
-        ?a oa:hasTarget [
-            rdfs:label ?target ;
-            qa:targetRelation ?targetRelation
-        ] .
-        ?a oa:annotatedBy ?component  .
-        ?a oa:annotatedAt ?time .
+        {
+            ?a a qa:AnnotationOfInstanceLocation .
+            ?a oa:hasBody [
+                dbo:type <https://dbpedia.org/resource/Districts_of_Germany> ;
+                rdfs:label ?label ;
+                qa:hasID ?qid
+            ] .
+            FILTER("PLACE_LABEL" = ?label)
+            ?a qa:hasConfidence ?score .
+            ?a oa:hasTarget [
+                rdfs:label ?target ;
+                qa:targetRelation ?targetRelation
+            ] .
+            ?a oa:annotatedBy ?component  .
+            ?a oa:annotatedAt ?time .
+        }
+        UNION
+        { # don't care about this query if no time is contained in the current question
+            ?s ?p ?o . 
+            FILTER("False" = "CONTAINS_PLACE")
+        }
     }
 }
