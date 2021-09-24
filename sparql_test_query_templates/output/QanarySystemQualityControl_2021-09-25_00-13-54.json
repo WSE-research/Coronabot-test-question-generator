@@ -1,0 +1,302 @@
+[
+    {
+        "question": "infections between the first and 28th of last March?",
+        "graph": "urn:graph:e12515c9-e8e6-4631-b5e1-763ad89851ef",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "Give me the number of cases in Jarmen during July 2021!",
+        "graph": "urn:graph:85390f78-3024-4d7b-8e6f-a12b99e952a8",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "number of deaths from the first until the 15th of last May",
+        "graph": "urn:graph:b9f4a1c1-2736-4bc0-8b7a-29f46bef7232",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many cases were reported in August in Magdeburg?",
+        "graph": "urn:graph:3fc3cd34-1c73-4e78-be2f-fa44a5e47d0b",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": false
+            },
+            {
+                "05_location_to_german_district.sparql": false
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "Give me the number of cases in Vollerwiek during June 2021!",
+        "graph": "urn:graph:3109b61c-b638-487f-9664-b38a7ec11887",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "What was the death toll during March 2021?",
+        "graph": "urn:graph:7ea33e66-1e89-4184-af5b-6971f87039e1",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many deaths were reported last December in Jarmen?",
+        "graph": "urn:graph:587922c8-eabb-4145-9a9c-f932f4664cde",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": false
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "How many infections were there in Dageb\u00fcll in April 2020?",
+        "graph": "urn:graph:d5f22ef0-19af-4508-b438-c36efe8d1fcd",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "What was the number of infections last October?",
+        "graph": "urn:graph:08b4a6ec-3098-417f-9d4e-2aa4af68b0d3",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    },
+    {
+        "question": "What is the current death toll in Grothusenkoog?",
+        "graph": "urn:graph:a812b16f-0c58-4007-9a06-15d6e96bcf45",
+        "results": [
+            {
+                "01_language_detection.sparql": true
+            },
+            {
+                "02_question_classification.sparql": true
+            },
+            {
+                "03_time_recognition.sparql": true
+            },
+            {
+                "04_ned.sparql": true
+            },
+            {
+                "05_location_to_german_district.sparql": true
+            },
+            {
+                "06_coronabot_missing_information.sparql": true
+            },
+            {
+                "07_rki_query.sparql": true
+            },
+            {
+                "custom_evaluation": true
+            }
+        ]
+    }
+]

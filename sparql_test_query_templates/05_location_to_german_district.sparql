@@ -12,7 +12,7 @@ WHERE {
                 rdfs:label ?label ;
                 qa:hasID ?qid
             ] .
-            FILTER("PLACE_LABEL" = ?label)
+            FILTER("DISTRICT_LABEL" = ?label)
             ?a qa:hasConfidence ?score .
             ?a oa:hasTarget [
                 rdfs:label ?target ;
@@ -22,7 +22,7 @@ WHERE {
             ?a oa:annotatedAt ?time .
         }
         UNION
-        { # don't care about this query if no time is contained in the current question
+        { # don't care about this query if no place is contained in the current question
             ?s ?p ?o . 
             FILTER("False" = "CONTAINS_PLACE")
         }
