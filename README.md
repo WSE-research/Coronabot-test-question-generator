@@ -1,8 +1,8 @@
-# coronabot-test-question-generator
+# Coronabot Test Case Generator
 
 ## Create a test configuration
 
-Change Jupyter notebook `1_coronabot-test-questions-generator.ipynb` until it fits your test requirements. 
+Change the Jupyter notebook `coronabot-test-case-generator.ipynb` until it fits your test requirements.
 
 It will create a test confirguration file that can be read and executed by the script `evaluate-qanary-system.py`.
 

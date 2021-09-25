@@ -250,6 +250,7 @@ def export_to_excel(logger, test_results, filename_prefix, sheet_name):
 
     rotate_header_degree = 90
     xlsx_filename = f"{filename_prefix}.xlsx"
+    csv_filename = f"{filename_prefix}.csv"
     
     df = create_data_frame(test_results)
     df = df.transpose()
@@ -270,6 +271,10 @@ def export_to_excel(logger, test_results, filename_prefix, sheet_name):
 
     # Convert the dataframe to an XlsxWriter Excel object.
     df.to_excel(writer, sheet_name=sheet_name, header=True)
+
+    # write the dataframe to a CSV file.
+    df.to_csv(csv_filename, index=True)
+    print("CSV file written to '%s'." % (csv_filename,))
 
     # Get the xlsxwriter objects from the dataframe writer object.
     workbook  = writer.book
